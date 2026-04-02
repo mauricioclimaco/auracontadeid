@@ -1,0 +1,24 @@
+<aura:component controller="StartComponentController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+    <aura:attribute name="retorno" type="String"/>
+    <aura:attribute name="conta" type="Account" default="{
+                                                       'sobjectType': 'Account',
+                                                       'Name': ''
+                                                       }"/>
+    
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_1-of-3">
+            <lightning:card variant="Narrow" title="Teste de atributo Aura" iconName="standard:account">
+                <div class="slds-p-horizontal_large">   
+                    <lightning:input name="name" label="Nome da Conta" value="{!v.conta.Name}"/>
+                    
+                    <br/>
+                    <lightning:button variant="brand" label="Clique" title="Clique" onclick="{! c.handleClick }" />
+                    
+                    <br/><br/>
+                    
+                    <p>{!v.retorno}</p>
+                </div>  
+            </lightning:card>
+        </div> 
+    </div>     
+</aura:component>
