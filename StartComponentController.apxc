@@ -1,0 +1,12 @@
+public class StartComponentController {
+
+    @AuraEnabled
+    public static String createAccount(Account acc){
+        
+        insert acc;
+        
+        return acc.Id;
+        
+    }
+    
+}
